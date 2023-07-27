@@ -2,14 +2,6 @@ var result = "";
 var playerPoints = 0;
 var balcoPoints = 0;
 
-/* let playerChoice = letterToChoice(prompt("Please enter r for rock, p for paper, s for scissor").toLowerCase());
-let computerChoice = letterToChoice(Math.floor(Math.random() * 3));
-
-
-console.log("Player: " + playerChoice);
-console.log("Computer: " + computerChoice); */
-
-
 
 game()
 
@@ -28,8 +20,6 @@ function letterToChoice(input){
         return "SCISSORS";
     }
 }
-
-
 
 
 function game(){
