@@ -1,1 +1,31 @@
-<script src="rock-paper-scissors.js"></script>
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="header">
+            <div><h1 id="title">// balCodings</h1></div>
+            <h1>Rock-Paper-Scissors</h1>
+            <button class="restartButton">Restart Game</button>
+        </div>
+        <div class="score">
+            <h2>Player <span id="playerScore">0</span> - <span id="computerScore">0</span> Computer</h2>
+        </div>
+        <div class="buttons">
+            <button class="playButton" onclick="game('r')">Rock</button>
+            <button class="playButton" onclick="game('p')">Paper</button>
+            <button class="playButton" onclick="game('s')">Scissors</button>
+        </div>
+        <div class="score">
+            <p id="resultdiv"></p>
+        </div>
+        <div class="finalResult">
+            <h1><p id="final"></p></h1>
+        </div>
+        <script src="rock-paper-scissors.js"></script>
+    </body>
+</html>

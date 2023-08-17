@@ -3,7 +3,7 @@ var playerPoints = 0;
 var balcoPoints = 0;
 
 
-game()
+
 
 
 function letterToChoice(input){
@@ -22,55 +22,62 @@ function letterToChoice(input){
 }
 
 
-function game(){
-    while (playerPoints < 3 && balcoPoints <3){
 
+function game(playerClicked){
+    if (playerPoints < 3 && balcoPoints <3){
+
+        var resultado = "";
         result = "";
-
-        let playerChoice = letterToChoice(prompt("Please enter r for rock, p for paper, s for scissor").toLowerCase());
-        let computerChoice = letterToChoice(Math.floor(Math.random() * 3));
         
+        letterToChoice(playerClicked).toLowerCase();
+        letterToChoice(Math.floor(Math.random() * 3));
+
+
         switch (result){
             case "RP":
-                console.log("Your rock gets beaten by my paper. I'll take that point!")
+                roundResult= "Your rock gets beaten by my paper. I'll take that point!"
                 balcoPoints ++;
                 break;
             case "RS":
-                console.log("Your rock wins against my scissors. Take this one!")
+                roundResult= "Your rock wins against my scissors. Take this one!"
                 playerPoints ++;
                 break;
             case "PR":
-                console.log("Your paper wraps my rock and that'll give you a point!")
+                roundResult= "Your paper wraps my rock and that'll give you a point!"
                 playerPoints ++;
                 break;
             case "PS":
-                console.log("Your paper gets cut into pieces by my scissors. Point for me!")
+                roundResult= "Your paper gets cut into pieces by my scissors. Point for me!"
                 balcoPoints ++;
                 break;
             case "SR":
-                console.log("Your scissors got smashed by my rock. My point!")
+                roundResult= "Your scissors got smashed by my rock. My point!"
                 balcoPoints ++;
                 break;
             case "SP":
-                console.log("Your scissors destroyed my paper. +1 for you, my friend!")
+                roundResult= "Your scissors destroyed my paper. +1 for you, my friend!"
                 playerPoints ++;
                 break;
             default:
-                console.log("That's a tie!")
+                roundResult= "That's a tie!"
                 break;
         }
+        
+            
+            document.getElementById("resultdiv").innerText = roundResult;
+            document.getElementById("playerScore").innerText = playerPoints;
+            document.getElementById("computerScore").innerText = balcoPoints;
 
-        console.log("Player: " + playerChoice);
-        console.log("Computer: " + computerChoice);
-        console.log("Playerpoints: " + playerPoints);
-        console.log("BalcoPoints: " + balcoPoints)
     }
 
     if (playerPoints == 3) {
-        console.log("You somehow managed to beat me.. Congratulations!")
+        resultado = "You somehow managed to beat me.. Congratulations!";
     }
     else if (balcoPoints == 3) {
-        console.log("Hah, I got you. I'm not surprised at all.. You can try to beat me anytime!")
+        resultado = "Hah, I got you. I'm not surprised at all.. You can try to beat me anytime!";
     }
-}
+
+    document.getElementById("final").innerText = resultado;
+
+} 
 

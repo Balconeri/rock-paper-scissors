@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+}
+
+.resultdiv {
+    display: flex;
+    justify-content: center;
+}
+
+#title {
+    color: gray;
+}
+
+.finalResult {
+    display: flex;
+    justify-content: center;
+}
