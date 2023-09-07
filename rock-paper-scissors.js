@@ -21,9 +21,20 @@ function letterToChoice(input){
     }
 }
 
-
+function updateScreen(){
+    document.getElementById("resultdiv").innerText = roundResult;
+    document.getElementById("playerScore").innerText = playerPoints;
+    document.getElementById("computerScore").innerText = balcoPoints;
+    document.getElementById("final").innerText = resultado;
+}
 
 function game(playerClicked){
+    if (playerClicked == "restart") {
+        playerPoints = 0;
+        balcoPoints = 0;
+        updateScreen();
+    }
+    
     if (playerPoints < 3 && balcoPoints <3){
 
         var resultado = "";
@@ -64,9 +75,7 @@ function game(playerClicked){
         }
         
             
-            document.getElementById("resultdiv").innerText = roundResult;
-            document.getElementById("playerScore").innerText = playerPoints;
-            document.getElementById("computerScore").innerText = balcoPoints;
+            
 
     }
 
@@ -77,7 +86,7 @@ function game(playerClicked){
         resultado = "Hah, I got you. I'm not surprised at all.. You can try to beat me anytime!";
     }
 
-    document.getElementById("final").innerText = resultado;
+    updateScreen();
 
 } 
 
