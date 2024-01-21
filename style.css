@@ -38,5 +38,6 @@ body {
 
 .finalResult {
     display: flex;
+    color: red;
     justify-content: center;
 }

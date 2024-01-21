@@ -1,7 +1,7 @@
 var result = "";
 var playerPoints = 0;
 var balcoPoints = 0;
-
+var final = "";
 
 
 
@@ -25,7 +25,7 @@ function updateScreen(){
     document.getElementById("resultdiv").innerText = roundResult;
     document.getElementById("playerScore").innerText = playerPoints;
     document.getElementById("computerScore").innerText = balcoPoints;
-    document.getElementById("final").innerText = resultado;
+    document.getElementById("final").innerText = final;
 }
 
 function game(playerClicked){
@@ -35,7 +35,7 @@ function game(playerClicked){
         updateScreen();
     }
     
-    if (playerPoints < 3 && balcoPoints <3){
+    if (playerPoints < 5 && balcoPoints <5){
 
         var resultado = "";
         result = "";
@@ -79,11 +79,11 @@ function game(playerClicked){
 
     }
 
-    if (playerPoints == 3) {
-        resultado = "You somehow managed to beat me.. Congratulations!";
+    if (playerPoints == 5) {
+        final = "You somehow managed to beat me.. Congratulations!";
     }
-    else if (balcoPoints == 3) {
-        resultado = "Hah, I got you. I'm not surprised at all.. You can try to beat me anytime!";
+    else if (balcoPoints == 5) {
+        final = "Hah, I got you. I'm not surprised at all.. You can try to beat me anytime!";
     }
 
     updateScreen();
